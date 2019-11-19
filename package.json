@@ -1,0 +1,30 @@
+{
+  "name": "todo",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "lerna run start --parallel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruslan-milinchuk/todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruslan-milinchuk/todo/issues"
+  },
+  "homepage": "https://github.com/ruslan-milinchuk/todo#readme",
+  "dependencies": {
+    "@todo/api": "file:packages/api",
+    "@todo/web": "file:packages/web",
+    "lerna": "^3.18.4"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
