@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "name": "todo.monorepo",
+  "build": {
+    "env": {
+      "NODE_ENV": "production",
+      "MONGO_DB": "@mongo_db_link"
+    }
+  },
+  "builds": [
+    { "src": "packages/api/index.js", "use": "@now/node" },
+    {
+      "src": "packages/web/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/packages/api/$1.js"
+    },
+    {
+      "src": "/static/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest": "/packages/web/static/$1"
+    },
+    { "src": "/favicon.ico", "dest": "/packages/web/favicon.ico" },
+    {
+      "src": "/asset-manifest.json",
+      "dest": "/packages/web/asset-manifest.json"
+    },
+    { "src": "/manifest.json", "dest": "/packages/web/manifest.json" },
+
+    {
+      "src": "/service-worker.js",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/packages/web/service-worker.js"
+    },
+
+    {
+      "src": "/(.*)",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/packages/web/index.html"
+    }
+  ]
+}
