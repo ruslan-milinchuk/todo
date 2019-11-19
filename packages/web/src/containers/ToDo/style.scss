@@ -1,0 +1,193 @@
+.todo {
+  width: 500px;
+  margin: auto;
+
+  &__title {
+    font-weight: 100;
+    color: #585252;
+  }
+
+  &__input {
+    width: calc(100% - 100px);
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 2px #ccc solid;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+
+    &-wrapper {
+      display: flex;
+      position: relative;
+      z-index: 100;
+    }
+
+    &-btn {
+      width: 100px;
+      height: 42px;
+      font-size: 16px;
+      padding: 11px;
+      box-sizing: border-box;
+      border-radius: 0 10px 10px 0;
+      border: 2px #ccc solid;
+      border-left: none;
+      background: #ccc;
+      color: #fff;
+      outline: none;
+
+      &:hover {
+        cursor: pointer;
+        background: rgba(71, 68, 68, 0.22);
+      }
+    }
+  }
+
+  &__list {
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &__edit-exit {
+      display: none;
+    }
+
+    & .exit-active {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    &-info {
+      font-size: 14px;
+      margin: 0px 5px 0 32px;
+      color: #ccc;
+    }
+
+    &-delete {
+      padding: 5px;
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+      font-size: 20px;
+
+      &:hover {
+        color: red;
+      }
+    }
+
+    &:hover .todo__edit {
+      display: block;
+    }
+  }
+
+  &__active {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+  }
+
+  &__text-edit {
+    padding-left: 0;
+    margin: 15px 15px 14px 0;
+    font-size: 16px;
+    border: none;
+    width: 400px;
+    outline: none;
+    border-bottom: 1px #050e0e solid;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    z-index: 150;
+  }
+
+  &__mark {
+    width: 10px;
+    height: 10px;
+    border: 2px #ccc solid;
+    border-radius: 50%;
+    margin: 5px 15px 5px 5px;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+      border-color: rgba(14, 13, 13, 0.65);
+    }
+  }
+
+  &__edit {
+    display: none;
+    width: 12px;
+    position: absolute;
+    right: 35px;
+    cursor: pointer;
+
+    &:hover {
+      color: #07088b;
+    }
+
+    &-exit {
+      &_block {
+        position: fixed;
+        left: 0;
+        top: 0;
+        min-width: 100vw;
+        min-height: 100vh;
+      }
+
+      &_none {
+        display: none;
+      }
+    }
+  }
+
+  &__btn-s-wrapper {
+    display: flex;
+    align-items: center;
+    height: 30px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+
+    &-title {
+      font-size: 20px;
+      width: 65px;
+    }
+
+    &-item,
+    .active {
+      width: calc(33.333% - 20px);
+      height: 100%;
+      background: #fff;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+
+      &:hover {
+        background: #cccccc;
+        color: #fff;
+      }
+
+      &-active {
+        background: #ccc;
+        color: #fff;
+      }
+    }
+  }
+
+  & .active {
+    background: #585252;
+    color: #ffffff;
+  }
+}
