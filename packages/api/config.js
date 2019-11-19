@@ -1,2 +1,5 @@
-const getDbConnectionString = () => "mongodb://localhost:27017/todo";
+const dotenv = require("dotenv");
+dotenv.config();
+
+const getDbConnectionString = () => process.env.MONGO_LINK;
 module.exports = getDbConnectionString;
