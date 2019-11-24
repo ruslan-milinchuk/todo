@@ -1,5 +1,7 @@
+import env from "../env";
+
 const apiFetch = async (url, options) => {
-  const res = await fetch(`http://localhost:4000/tasks${url}`, options);
+  const res = await fetch(`${env.REACT_APP_API_URL}${url}`, options);
   return await res.json();
 };
 
