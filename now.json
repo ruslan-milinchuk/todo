@@ -4,11 +4,15 @@
   "build": {
     "env": {
       "NODE_ENV": "production",
-      "MONGO_DB": "@mongo_link_db"
+      "MONGO_LINK": "@mongo_todo_url",
+      "REACT_APP_API_URL": "/api"
     }
   },
   "builds": [
-    { "src": "packages/api/index.js", "use": "@now/node" },
+    {
+      "src": "packages/api/index.js",
+      "use": "@now/node"
+    },
     {
       "src": "packages/web/package.json",
       "use": "@now/static-build",
