@@ -16,10 +16,10 @@ const ToDo = () => {
   const [valueInput, setValueInput] = useState("");
 
   const getList = async params =>
-    await apiFetch(`?${stringifySearchParams(params)}`);
+    await apiFetch(`/tasks?${stringifySearchParams(params)}`);
 
   const editTask = async ({ _id, body }) =>
-    await apiFetch(`/${_id}`, {
+    await apiFetch(`/tasks/${_id}`, {
       method: "PUT",
       body: JSON.stringify(body),
       headers: {
@@ -29,7 +29,7 @@ const ToDo = () => {
     });
 
   const addTask = async body =>
-    await apiFetch("", {
+    await apiFetch("/tasks", {
       method: "POST",
       body: JSON.stringify(body),
       headers: {
@@ -38,7 +38,8 @@ const ToDo = () => {
       }
     });
 
-  const deleteTask = async id => await apiFetch(`/${id}`, { method: "DELETE" });
+  const deleteTask = async id =>
+    await apiFetch(`/tasks/${id}`, { method: "DELETE" });
 
   useEffect(() => {
     const getData = async () => {
