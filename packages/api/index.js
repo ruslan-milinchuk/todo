@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const cors = require("cors");
 const route = require("./routes");
@@ -17,6 +19,6 @@ app.use(bodyParser.json());
 
 route.tasks(app);
 
-app.listen(4000, () => {
-	console.log(`Server listening on Port : ${4000}`);
+app.listen(process.env.PATH, () => {
+	console.log(`Server listening on Port : ${process.env.PATH}`);
 });

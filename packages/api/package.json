@@ -6,12 +6,20 @@
   "scripts": {
     "start": "node index.js"
   },
+  "engines": {
+    "node": "10.x"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/andriy-ilin/todo.node.git/@todo/api"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mongodb-client-encryption": "^0.3.1",
     "mongoose": "^5.7.11"
   }
 }
