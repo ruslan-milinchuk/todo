@@ -19,7 +19,6 @@
   "dependencies": {
     "@todo/api": "file:packages/api",
     "@todo/web": "file:packages/web",
-    "dotenv": "^8.2.0",
     "lerna": "^3.18.4"
   },
   "devDependencies": {
