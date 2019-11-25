@@ -9,8 +9,8 @@ const route = require("./routes");
 
 const getDbConnectionString = require("./config");
 mongoose.connect(getDbConnectionString(), {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 const app = express();
@@ -19,6 +19,6 @@ app.use(bodyParser.json());
 
 route.tasks(app);
 
-app.listen(process.env.PATH, () => {
-	console.log(`Server listening on Port : ${process.env.PATH}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server listening on Port : ${process.env.PORT}`);
 });
