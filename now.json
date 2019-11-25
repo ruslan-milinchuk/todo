@@ -11,7 +11,7 @@
   "builds": [
     {
       "src": "packages/api/index.js",
-      "use": "@now/node"
+      "use": "@now/node-server"
     },
     {
       "src": "packages/web/package.json",
@@ -22,7 +22,8 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/packages/api/$1.js"
+      "dest": "/packages/api/index.js",
+      "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/static/(.*)",
