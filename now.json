@@ -1,10 +1,11 @@
 {
   "version": 2,
   "name": "todo.monorepo",
+  "env": {
+    "MONGO_LINK": "@mongo_todo_url"
+  },
   "build": {
     "env": {
-      "NODE_ENV": "production",
-      "MONGO_LINK": "@mongo_todo_url",
       "REACT_APP_API_URL": "/api"
     }
   },

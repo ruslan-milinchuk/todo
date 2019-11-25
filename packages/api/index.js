@@ -7,10 +7,9 @@ dotenv.config();
 const cors = require("cors");
 const route = require("./routes");
 
-const getDbConnectionString = require("./config");
-mongoose.connect(getDbConnectionString(), {
+mongoose.connect(process.env.MONGO_LINK, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  logging: true
 });
 
 const app = express();
